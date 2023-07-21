@@ -7,7 +7,7 @@ variable "name" {
 
 variable "namespace" {
   type    = string
-  default = "argo"
+  default = "kube-argo"
 }
 
 variable "compartment" {
@@ -18,7 +18,7 @@ variable "compartment" {
 # Helm
 variable "helm_chart_version_argo" {
   type    = string
-  default = "1.6.1"
+  default = "5.28.1"
 }
 
 variable "deploy_argo" {
