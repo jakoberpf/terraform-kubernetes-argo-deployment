@@ -4,7 +4,7 @@ resource "helm_release" "argo" {
   name       = "argo"
   repository = var.argo_helm_repository
   chart      = var.argo_helm_chart_name
-  version    = var.helm_chart_version_argo
+  version    = var.argo_helm_version
   namespace  = var.namespace
 
   depends_on = [
