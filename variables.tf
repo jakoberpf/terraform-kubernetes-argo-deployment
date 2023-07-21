@@ -18,7 +18,7 @@ variable "compartment" {
 # Helm
 variable "argo_helm_version" {
   type    = string
-  default = "5.28.1"
+  default = "5.41.1"
 }
 
 variable "argo_helm_chart_name" {
