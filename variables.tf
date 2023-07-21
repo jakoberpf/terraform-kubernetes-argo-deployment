@@ -16,12 +16,23 @@ variable "compartment" {
 }
 
 # Helm
-variable "helm_chart_version_argo" {
+variable "argo_helm_version" {
   type    = string
   default = "5.28.1"
 }
 
-variable "deploy_argo" {
+variable "argo_helm_chart_name" {
+  type    = string
+  default = "argo-cd"
+}
+
+variable "argo_helm_repository" {
+  type    = string
+  default = "https://argoproj.github.io/argo-helm"
+}
+
+# Configuration
+variable "argo_enabled" {
   type    = bool
   default = true
 }

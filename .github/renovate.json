@@ -6,7 +6,17 @@
   "labels": ["auto-update"],
   "enabledManagers": ["terraform"],
   "terraform": {
-    "ignorePaths": ["**/context.tf", "examples/**"]
-  }
+    "ignorePaths": ["**/context.tf", "examples/**"],
+    "depTypes": ["helm_release"]
+  },
+  "regexManagers": [
+    {
+      "fileMatch": ["\\.tf$"],
+      "matchStrings": [
+        "default = \"(?<currentValue>([0-9]+)\\.([0-9]+)\\.([0-9]+))\"\\n}\\n\\nvariable \".+_helm_chart_name\" {\\n.+\\n  default = \"(?<depName>[a-z].+)\"\\n}\\n\\n.+\\n.+\\n.+\\n}\\n\\nvariable \".+_helm_repository\" {\\n.+\\n  default = \"(?<registryUrl>.*?)\""
+      ],
+      "datasourceTemplate": "helm"
+    }
+  ]
 }
 
